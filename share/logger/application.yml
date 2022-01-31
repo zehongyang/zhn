@@ -1,0 +1,27 @@
+zap:
+  logger:
+    level: "debug"
+    development: true
+    disableCaller: false
+    disableStacktrace: true
+    sampling:
+      initial: 100
+      thereafter: 100
+    encoding: "console"
+    encoderConfig:
+      messageKey: "msg"
+      levelKey: "level"
+      timeKey: "ts"
+      nameKey: "logger"
+      callerKey: "caller"
+      functionKey: ""
+      stacktraceKey: "stacktrace"
+      lineEnding: "\n"
+      levelEncoder: ""
+      timeEncoder: "iso8601"
+      durationEncoder: ""
+      callerEncoder: "full"
+      nameEncoder: ""
+      consoleSeparator: ""
+    outputPaths: ["stdout"]
+    errorOutputPaths: ["stderr"]

@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option go_package = "./pb";
+import "ids.proto";
+
+
+message MsgRequestQuery {
+  HandleId hid  = 1;
+  bytes body = 2;
+  int64 sequence = 3; //序列号 时间戳毫秒+随机数
+}
+
+message MsgRequestQueryResponse{
+  HandleCode code = 1;
+  string error = 2;
+  int64 sequence = 3; //对应序列号
+  HandleId hid  = 4;
+  bytes data = 5;
+}
+
+
+
+
+
