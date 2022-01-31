@@ -5,6 +5,8 @@ option go_package = "./pb";
 enum HandleId{
   HI_None = 0;
   HI_UserLoginQuery = 1;
+  HI_MsgToUidQuery = 2;
+  HI_MsgToAllQuery = 3;
 }
 
 enum HandleCode{

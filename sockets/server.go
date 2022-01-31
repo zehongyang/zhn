@@ -6,6 +6,7 @@ import (
 	"gopros/share/errs"
 	"gopros/share/logger"
 	"net"
+	"os"
 	"sync"
 )
 
@@ -74,16 +75,19 @@ var GetSocketServer = func() func(modes ...int) IServer {
 		}
 		switch mode {
 		case WebSocketMode:
-			return &WebsocketServer{Config: scfg.Ws,HandlerManager: GetHandlerManager(),sm: GetSessionManager()}
+			return &WebsocketServer{Config: scfg.Im.Ws,HandlerManager: GetHandlerManager(),sm: GetSessionManager()}
 		default:
-			return &TcpServer{Config:scfg.Tcp,HandlerManager: GetHandlerManager(),sm: GetSessionManager()}
+			return &TcpServer{Config:scfg.Im.Tcp,HandlerManager: GetHandlerManager(),sm: GetSessionManager()}
 		}
 	}
 }()
 
 type SocketConfig struct {
-	Ws  *WebsocketConfig
-	Tcp  *TcpConfig
+	Im struct{
+		Ws  *WebsocketConfig
+		Tcp  *TcpConfig
+		Hosts []*HostsConfig
+	}
 }
 
 
@@ -109,4 +113,21 @@ type TcpConfig struct {
 
 type WebsocketConfig struct {
 	Addr string
+}
+
+type HostsConfig struct {
+	ServerName string `yaml:"serverName"`
+	Host string `yaml:"host"`
+	Rpc string `yaml:"rpc"`
+}
+
+func (s *HostsConfig) isLocal () bool {
+	return s.ServerName == os.Getenv(config.ServerName)
+}
+
+func (s *SocketConfig) CalcNode (uid int64) *HostsConfig {
+	if len(s.Im.Hosts) < 1 {
+		return nil
+	}
+	return s.Im.Hosts[uid%int64(len(s.Im.Hosts))]
 }

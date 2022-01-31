@@ -162,6 +162,239 @@ func (x *MsgRequestQueryResponse) GetData() []byte {
 	return nil
 }
 
+type MsgToUidQuery struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Uids []int64     `protobuf:"varint,1,rep,packed,name=uids,proto3" json:"uids,omitempty"`
+	Msg  *MsgContent `protobuf:"bytes,2,opt,name=msg,proto3" json:"msg,omitempty"`
+}
+
+func (x *MsgToUidQuery) Reset() {
+	*x = MsgToUidQuery{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_msg_proto_msgTypes[2]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgToUidQuery) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgToUidQuery) ProtoMessage() {}
+
+func (x *MsgToUidQuery) ProtoReflect() protoreflect.Message {
+	mi := &file_msg_proto_msgTypes[2]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MsgToUidQuery.ProtoReflect.Descriptor instead.
+func (*MsgToUidQuery) Descriptor() ([]byte, []int) {
+	return file_msg_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *MsgToUidQuery) GetUids() []int64 {
+	if x != nil {
+		return x.Uids
+	}
+	return nil
+}
+
+func (x *MsgToUidQuery) GetMsg() *MsgContent {
+	if x != nil {
+		return x.Msg
+	}
+	return nil
+}
+
+type MsgContent struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Mc  []byte `protobuf:"bytes,1,opt,name=mc,proto3" json:"mc,omitempty"`
+	Mid []byte `protobuf:"bytes,2,opt,name=mid,proto3" json:"mid,omitempty"`
+}
+
+func (x *MsgContent) Reset() {
+	*x = MsgContent{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_msg_proto_msgTypes[3]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgContent) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgContent) ProtoMessage() {}
+
+func (x *MsgContent) ProtoReflect() protoreflect.Message {
+	mi := &file_msg_proto_msgTypes[3]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MsgContent.ProtoReflect.Descriptor instead.
+func (*MsgContent) Descriptor() ([]byte, []int) {
+	return file_msg_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *MsgContent) GetMc() []byte {
+	if x != nil {
+		return x.Mc
+	}
+	return nil
+}
+
+func (x *MsgContent) GetMid() []byte {
+	if x != nil {
+		return x.Mid
+	}
+	return nil
+}
+
+type MsgToUidQueryResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *MsgToUidQueryResponse) Reset() {
+	*x = MsgToUidQueryResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_msg_proto_msgTypes[4]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgToUidQueryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgToUidQueryResponse) ProtoMessage() {}
+
+func (x *MsgToUidQueryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_msg_proto_msgTypes[4]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MsgToUidQueryResponse.ProtoReflect.Descriptor instead.
+func (*MsgToUidQueryResponse) Descriptor() ([]byte, []int) {
+	return file_msg_proto_rawDescGZIP(), []int{4}
+}
+
+type MsgToAllQuery struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Msg *MsgContent `protobuf:"bytes,1,opt,name=msg,proto3" json:"msg,omitempty"`
+}
+
+func (x *MsgToAllQuery) Reset() {
+	*x = MsgToAllQuery{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_msg_proto_msgTypes[5]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgToAllQuery) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgToAllQuery) ProtoMessage() {}
+
+func (x *MsgToAllQuery) ProtoReflect() protoreflect.Message {
+	mi := &file_msg_proto_msgTypes[5]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MsgToAllQuery.ProtoReflect.Descriptor instead.
+func (*MsgToAllQuery) Descriptor() ([]byte, []int) {
+	return file_msg_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *MsgToAllQuery) GetMsg() *MsgContent {
+	if x != nil {
+		return x.Msg
+	}
+	return nil
+}
+
+type MsgToAllQueryResponse struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *MsgToAllQueryResponse) Reset() {
+	*x = MsgToAllQueryResponse{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_msg_proto_msgTypes[6]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *MsgToAllQueryResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*MsgToAllQueryResponse) ProtoMessage() {}
+
+func (x *MsgToAllQueryResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_msg_proto_msgTypes[6]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use MsgToAllQueryResponse.ProtoReflect.Descriptor instead.
+func (*MsgToAllQueryResponse) Descriptor() ([]byte, []int) {
+	return file_msg_proto_rawDescGZIP(), []int{6}
+}
+
 var File_msg_proto protoreflect.FileDescriptor
 
 var file_msg_proto_rawDesc = []byte{
@@ -182,8 +415,21 @@ var file_msg_proto_rawDesc = []byte{
 	0x75, 0x65, 0x6e, 0x63, 0x65, 0x12, 0x1b, 0x0a, 0x03, 0x68, 0x69, 0x64, 0x18, 0x04, 0x20, 0x01,
 	0x28, 0x0e, 0x32, 0x09, 0x2e, 0x48, 0x61, 0x6e, 0x64, 0x6c, 0x65, 0x49, 0x64, 0x52, 0x03, 0x68,
 	0x69, 0x64, 0x12, 0x12, 0x0a, 0x04, 0x64, 0x61, 0x74, 0x61, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0c,
-	0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x42, 0x06, 0x5a, 0x04, 0x2e, 0x2f, 0x70, 0x62, 0x62, 0x06,
-	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x52, 0x04, 0x64, 0x61, 0x74, 0x61, 0x22, 0x42, 0x0a, 0x0d, 0x4d, 0x73, 0x67, 0x54, 0x6f, 0x55,
+	0x69, 0x64, 0x51, 0x75, 0x65, 0x72, 0x79, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x69, 0x64, 0x73, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x03, 0x52, 0x04, 0x75, 0x69, 0x64, 0x73, 0x12, 0x1d, 0x0a, 0x03, 0x6d,
+	0x73, 0x67, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x0b, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x6f,
+	0x6e, 0x74, 0x65, 0x6e, 0x74, 0x52, 0x03, 0x6d, 0x73, 0x67, 0x22, 0x2e, 0x0a, 0x0a, 0x4d, 0x73,
+	0x67, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x0e, 0x0a, 0x02, 0x6d, 0x63, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0c, 0x52, 0x02, 0x6d, 0x63, 0x12, 0x10, 0x0a, 0x03, 0x6d, 0x69, 0x64, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x0c, 0x52, 0x03, 0x6d, 0x69, 0x64, 0x22, 0x17, 0x0a, 0x15, 0x4d, 0x73,
+	0x67, 0x54, 0x6f, 0x55, 0x69, 0x64, 0x51, 0x75, 0x65, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f,
+	0x6e, 0x73, 0x65, 0x22, 0x2e, 0x0a, 0x0d, 0x4d, 0x73, 0x67, 0x54, 0x6f, 0x41, 0x6c, 0x6c, 0x51,
+	0x75, 0x65, 0x72, 0x79, 0x12, 0x1d, 0x0a, 0x03, 0x6d, 0x73, 0x67, 0x18, 0x01, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x0b, 0x2e, 0x4d, 0x73, 0x67, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x52, 0x03,
+	0x6d, 0x73, 0x67, 0x22, 0x17, 0x0a, 0x15, 0x4d, 0x73, 0x67, 0x54, 0x6f, 0x41, 0x6c, 0x6c, 0x51,
+	0x75, 0x65, 0x72, 0x79, 0x52, 0x65, 0x73, 0x70, 0x6f, 0x6e, 0x73, 0x65, 0x42, 0x06, 0x5a, 0x04,
+	0x2e, 0x2f, 0x70, 0x62, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
@@ -198,22 +444,29 @@ func file_msg_proto_rawDescGZIP() []byte {
 	return file_msg_proto_rawDescData
 }
 
-var file_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_msg_proto_msgTypes = make([]protoimpl.MessageInfo, 7)
 var file_msg_proto_goTypes = []interface{}{
 	(*MsgRequestQuery)(nil),         // 0: MsgRequestQuery
 	(*MsgRequestQueryResponse)(nil), // 1: MsgRequestQueryResponse
-	(HandleId)(0),                   // 2: HandleId
-	(HandleCode)(0),                 // 3: HandleCode
+	(*MsgToUidQuery)(nil),           // 2: MsgToUidQuery
+	(*MsgContent)(nil),              // 3: MsgContent
+	(*MsgToUidQueryResponse)(nil),   // 4: MsgToUidQueryResponse
+	(*MsgToAllQuery)(nil),           // 5: MsgToAllQuery
+	(*MsgToAllQueryResponse)(nil),   // 6: MsgToAllQueryResponse
+	(HandleId)(0),                   // 7: HandleId
+	(HandleCode)(0),                 // 8: HandleCode
 }
 var file_msg_proto_depIdxs = []int32{
-	2, // 0: MsgRequestQuery.hid:type_name -> HandleId
-	3, // 1: MsgRequestQueryResponse.code:type_name -> HandleCode
-	2, // 2: MsgRequestQueryResponse.hid:type_name -> HandleId
-	3, // [3:3] is the sub-list for method output_type
-	3, // [3:3] is the sub-list for method input_type
-	3, // [3:3] is the sub-list for extension type_name
-	3, // [3:3] is the sub-list for extension extendee
-	0, // [0:3] is the sub-list for field type_name
+	7, // 0: MsgRequestQuery.hid:type_name -> HandleId
+	8, // 1: MsgRequestQueryResponse.code:type_name -> HandleCode
+	7, // 2: MsgRequestQueryResponse.hid:type_name -> HandleId
+	3, // 3: MsgToUidQuery.msg:type_name -> MsgContent
+	3, // 4: MsgToAllQuery.msg:type_name -> MsgContent
+	5, // [5:5] is the sub-list for method output_type
+	5, // [5:5] is the sub-list for method input_type
+	5, // [5:5] is the sub-list for extension type_name
+	5, // [5:5] is the sub-list for extension extendee
+	0, // [0:5] is the sub-list for field type_name
 }
 
 func init() { file_msg_proto_init() }
@@ -247,6 +500,66 @@ func file_msg_proto_init() {
 				return nil
 			}
 		}
+		file_msg_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgToUidQuery); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_msg_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgContent); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_msg_proto_msgTypes[4].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgToUidQueryResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_msg_proto_msgTypes[5].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgToAllQuery); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_msg_proto_msgTypes[6].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*MsgToAllQueryResponse); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
@@ -254,7 +567,7 @@ func file_msg_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_msg_proto_rawDesc,
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   7,
 			NumExtensions: 0,
 			NumServices:   0,
 		},

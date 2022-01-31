@@ -17,7 +17,8 @@ var (
 )
 
 const (
-	YmlSource = "ymlSource"
+	YmlSource = "YmlSource"
+	ServerName = "ServerName"
 )
 
 //加载yaml配置

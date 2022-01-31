@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "./pb";
+import "ids.proto";
+
+
+service Server{
+  rpc Serve(ServerRequest) returns (ServerResponse) {}
+}
+
+
+message ServerRequest{
+    HandleId hid = 1;
+    DataType dt = 2;
+    bytes body = 3;
+    int64 uid = 4;
+}
+
+message ServerResponse{
+  int32 code = 1;
+  string error = 2;
+  HandleId hid = 3;
+  bytes data = 4;
+  DataType dt = 5;
+}
+
+
+
+
+
+

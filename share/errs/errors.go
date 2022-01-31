@@ -13,4 +13,5 @@ var (
 	ErrReq = errors.New("request err")
 	ErrInvalid = errors.New("invalid err")
 	ErrDataLength = errors.New("data length err")
+	ErrRpcHost = errors.New("rpc host err")
 )

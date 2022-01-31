@@ -1,5 +1,11 @@
-tcp:
-  addr: ":8000"
+im:
+  tcp:
+    addr: ":8000"
+  hosts:
+    - {serverName: "server1",host: "127.0.0.1:8000",rpc: "127.0.0.1:18000"}
+    - {serverName: "server2",host: "127.0.0.1:8001",rpc: "127.0.0.1:18001"}
+    - {serverName: "server3",host: "127.0.0.1:8002",rpc: "127.0.0.1:18002"}
+
 zap:
   logger:
     level: "debug"

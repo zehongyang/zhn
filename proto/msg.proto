@@ -19,6 +19,25 @@ message MsgRequestQueryResponse{
 }
 
 
+message MsgToUidQuery{
+  repeated int64 uids = 1;
+  MsgContent msg = 2;
+}
 
 
+message MsgContent{
+  bytes mc = 1;
+  bytes mid = 2;
+}
 
+message MsgToUidQueryResponse{
+
+}
+
+message MsgToAllQuery{
+  MsgContent msg = 1;
+}
+
+message MsgToAllQueryResponse{
+
+}

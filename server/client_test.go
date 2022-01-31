@@ -9,6 +9,7 @@ import (
 	"gopros/proto/pb"
 	"gopros/share/config"
 	"gopros/share/logger"
+	"gopros/sockets"
 	"net"
 	"os"
 	"testing"
@@ -24,12 +25,19 @@ func TestClient(t *testing.T)  {
 }
 
 func TestChan(t *testing.T)  {
-	var ch = make(chan int)
-	close(ch)
+	socketConfig := sockets.GetSocketConfig()
+	for _, host := range socketConfig.Im.Hosts {
+		t.Log(host)
+	}
+	host, port, err := net.SplitHostPort("127.0.0.1:18002")
+	if err != nil {
+		t.Fatal(err)
+	}
+	t.Log(host,port)
 }
 
 func TestEnv(t *testing.T)  {
-	data := os.Getenv(config.YmlSource)
+	data := os.Getenv(config.ServerName)
 	t.Log(data)
 }
 
