@@ -5,7 +5,7 @@ import "ids.proto";
 
 
 service Server{
-  rpc Serve(ServerRequest) returns (ServerResponse) {}
+  rpc Handle(ServerRequest) returns (ServerResponse) {}
 }
 
 

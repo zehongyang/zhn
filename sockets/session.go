@@ -294,8 +294,7 @@ var SendToUid = func() func(fid int64,data []byte,uids ...int64)  {
 					logger.E(zap.Error(err),zap.Any("config",config),zap.Any("fid",fid))
 					continue
 				}
-				res, err := rc.Handle(fid, &pb.ServerRequest{Hid: pb.HandleId_HI_MsgToUidQuery},
-					&pb.MsgToUidQuery{Msg: &pb.MsgContent{Mc: data}, Uids: uids})
+				res, err := rc.Handle(fid, &pb.MsgToUidQuery{Msg: &pb.MsgContent{Mc: data}, Uids: uids})
 				if err != nil {
 					logger.E(zap.Error(err),zap.Any("config",config),zap.Any("fid",fid))
 					continue
@@ -327,7 +326,7 @@ var SendToAll = func() func(fid int64,data []byte) {
 				logger.E(zap.Error(err),zap.Any("config",host),zap.Any("fid",fid))
 				continue
 			}
-			res, err := rc.Handle(fid, &pb.ServerRequest{Hid: pb.HandleId_HI_MsgToAllQuery}, &pb.MsgToAllQuery{Msg: &pb.MsgContent{Mc: data}})
+			res, err := rc.Handle(fid,&pb.MsgToAllQuery{Msg: &pb.MsgContent{Mc: data}})
 			if err != nil {
 				logger.E(zap.Error(err),zap.Any("config",host),zap.Any("fid",fid))
 				continue
